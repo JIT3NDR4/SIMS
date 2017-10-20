@@ -1,11 +1,24 @@
  <html>
  <head>
 <title>SIMS|LogIn</title>
+<link rel="stylesheet" type="text/css" href="css/login.css" >
 <style style="text/css">
 body {
-  background-image: url("images/students.jpg");
+  background-image: url("images/welc.jpg");
   background-position: 40% 45%;
   background-repeat: no-repeat;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -18,7 +31,7 @@ body {
 <br />
 <br />
 <center>
-<h3>Logging in..</h3>
+<h2 style="color:white">Logging in..</h2>
 <img src="images/loader.gif"  width="150" height="150" border="0">
 </center>
 
@@ -46,7 +59,7 @@ if ($num_rows <= 0) {
 
 		
 echo  '<center><span style="color:red;text-align:center;"><b>Sorry, there is no username with the specified password.<br></span></center>'; 
-echo '<center><button id="retry" class="float-left submit-button" >RETRY</button></center>
+echo '<center><button id="retry" class="button" >RETRY</button></center>
 
 <script type="text/javascript">
     document.getElementById("retry").onclick = function () {
@@ -73,13 +86,13 @@ ob_end_flush();
 </tr>
 </td>
 </tr>
-<button id="myButton" class="float-left submit-button" >Home</button>
+<button id="myButton" class="button" >Home</button>
 
 <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
-        location.href = "home.php";
+        location.href = "home.html";
     };
-</script>'
+</script>
  </b></center>
  </body>
  </html>

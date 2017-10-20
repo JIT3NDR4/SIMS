@@ -2,11 +2,24 @@
 <head>
 
 <title>SIMS|Register</title>
+<link rel="stylesheet" type="text/css" href="css/login.css" >
 <style style="text/css">
 body {
-  background-image: url("images/students.jpg");
+  background-image: url("images/welc.jpg");
   background-position: 40% 45%;
   background-repeat: no-repeat;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -56,8 +69,14 @@ or die ("Could not match data because ".mysql_error());
 $num_rows = mysql_num_rows($qry); 
 
 if ($num_rows != 0) { 
-echo "<b>Sorry,  the username $username is already taken.<br>";
-echo "<a href=register.html><b>Try again</a>";
+echo '<b style="color:red">Sorry,  the username $username is already taken.<br>';
+echo '<center><button id="retry" class="button" >RETRY</button></center>
+
+<script type="text/javascript">
+    document.getElementById("retry").onclick = function () {
+        location.href = "index.html";
+    };
+</script>';
 exit; 
 } else {
 
@@ -69,7 +88,7 @@ or die("Could not insert data because ".mysql_error());
 	//	}
 
 echo '<span style="color:#000000;text-align:center;"><b>Your user account has been created!<br></span>';
-echo '<p style="color: red; text-align: center">
+echo '<p style="color: green; text-align: center">
       <b><a href=index.html>log in</a>
       </p>';
 
